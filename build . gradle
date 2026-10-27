@@ -1,0 +1,25 @@
+plugins {
+    id 'net.minecraftforge.gradle' version '[7.0,8.0)'
+}
+
+group = 'ru.instant.homes'
+version = '1.0.0'
+
+base {
+    archivesName = 'InstantHomes'
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+minecraft {
+    mappings channel: 'official', version: '26.3'
+    reobf = false
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:26.3-66.1.0'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
