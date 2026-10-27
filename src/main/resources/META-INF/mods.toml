@@ -1,0 +1,23 @@
+modLoader="javafml"
+loaderVersion="[66,)"
+license="MIT"
+
+[[mods]]
+modId="instanthomes"
+version="1.0.0"
+displayName="Instant Homes"
+description='''Мгновенная телепортация и сохранение домов в одиночном мире.'''
+
+[[dependencies.instanthomes]]
+modId="forge"
+mandatory=true
+versionRange="[66.1.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.instanthomes]]
+modId="minecraft"
+mandatory=true
+versionRange="[26.3,26.4)"
+ordering="NONE"
+side="BOTH"

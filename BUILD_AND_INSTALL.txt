@@ -1,0 +1,11 @@
+СБОРКА И УСТАНОВКА
+
+1. Установи Java 25.
+2. Скачай MDK Forge 26.3-66.1.0 с официального сайта Forge.
+3. Распакуй MDK.
+4. Замени в нём папку src папкой src из этого проекта.
+5. В gradle.properties MDK проверь mod_id=instanthomes, mod_group_id=ru.instant.homes, mod_version=1.0.0, minecraft_version=26.3, forge_version=66.1.0.
+6. Открой терминал в папке MDK и запусти: gradlew.bat build
+7. После успешной сборки скопируй JAR из build\libs в папку mods профиля Forge.
+
+Не копируй ZIP с исходниками непосредственно в mods.
