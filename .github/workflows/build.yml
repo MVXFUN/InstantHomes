@@ -27,9 +27,17 @@ jobs:
       - name: Build mod
         run: gradle build
 
-      - name: Show generated JAR files
+      - name: Show generated files
+        if: always()
         run: |
-          find build/libs -maxdepth 1 -type f -name "*.jar" -print
+          echo "Current directory:"
+          pwd
+          echo "Repository files:"
+          ls -la
+          echo "Searching for JAR files:"
+          find . -type f -name "*.jar" -print
+          echo "Searching for Gradle build files:"
+          find . -maxdepth 4 \( -name "build.gradle" -o -name "build.gradle.kts" -o -name "settings.gradle" \) -print
 
       - name: Upload JAR
         uses: actions/upload-artifact@v4
