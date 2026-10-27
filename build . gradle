@@ -1,4 +1,5 @@
 plugins {
+    id 'java'
     id 'net.minecraftforge.gradle' version '[7.0,8.0)'
 }
 
@@ -9,7 +10,11 @@ base {
     archivesName = 'InstantHomes'
 }
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
 
 minecraft {
     mappings channel: 'official', version: '26.3'
@@ -20,16 +25,6 @@ dependencies {
     minecraft 'net.minecraftforge:forge:26.3-66.1.0'
 }
 
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
-}
-tasks.register('checkModFiles') {
-    doLast {
-        println "Java source files:"
-        fileTree('src/main/java').matching {
-            include '**/*.java'
-        }.files.each {
-            println it
-        }
-    }
+tasks.named('jar', Jar).configure {
+    archiveBaseName = 'InstantHomes'
 }
