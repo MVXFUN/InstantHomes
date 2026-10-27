@@ -23,3 +23,13 @@ dependencies {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
+tasks.register('checkModFiles') {
+    doLast {
+        println "Java source files:"
+        fileTree('src/main/java').matching {
+            include '**/*.java'
+        }.files.each {
+            println it
+        }
+    }
+}
